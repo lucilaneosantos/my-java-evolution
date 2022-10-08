@@ -62,13 +62,16 @@ public class Conta {
 
     public void depositar(double valor) throws InsercaoNegativa {
         this.saldo+=valor;
+        mostrar.movimentacao("Deposito realizado na Conta "+this.conta,this.saldo);
     }
     public void sacar(double valor) throws InsuficienciaSaldo {
         this.saldo-=valor;
+        mostrar.movimentacao("Saque realizado na Conta "+this.conta,valor);
     }
     public void transferir(double valor,Conta conta) throws InsuficienciaSaldo, InsercaoNegativa {
         this.sacar(valor);
         conta.depositar(valor);
+        mostrar.movimentacao("Transferencia para Conta "+conta.conta,valor);
     }
     public static boolean cancelarConta(String justificativa,Conta cancelarConta) throws ContaInexistente{
         boolean cancelada;
@@ -83,8 +86,7 @@ public class Conta {
 
     }
     public  void imprimir(){
-        System.out.println(mostrar.dadosConta());
-        System.out.println(mostrar.meuSaldo(this.saldo));
+        System.out.println(mostrar.historico());
     }
 
 }

@@ -11,6 +11,7 @@ public class App {
         cc.transferir(45,c1);
         System.out.println(cc.getSaldo());
         System.out.println(c1.getSaldo());
-        System.out.println(Conta.cancelarConta("Nao mais necessaria",c1));
+
+        System.out.println(c1.imprimir());
     }
 }

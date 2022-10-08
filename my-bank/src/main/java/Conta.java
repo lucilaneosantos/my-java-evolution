@@ -79,4 +79,8 @@ public class Conta {
         return cancelada;
 
     }
+    public StringBuilder imprimir(){
+        Extrato tela = new Extrato(this.nomeCliente,this.agencia);
+       return tela.dadosCliente();
+    }
 }

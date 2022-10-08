@@ -34,6 +34,10 @@ public class ContaCorrente extends Conta {
         }
 
     }
+    @Override
+    public StringBuilder imprimir(){
 
+        return super();
+    }
 
 }

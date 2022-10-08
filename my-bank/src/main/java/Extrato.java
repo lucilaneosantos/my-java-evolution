@@ -1,4 +1,9 @@
+import validacoes.ErroDatas;
+
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Extrato {
@@ -34,6 +39,18 @@ public class Extrato {
 
         return registrando.toString();
 
+        }
+        public void consultarExtratoPeriodo(String datainicial, String dataFinal) throws ParseException , ErroDatas {
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+             Date inicio = formatter.parse(datainicial);
+             Date fim = formatter.parse(dataFinal);
+            if(!inicio.before(fim)){
+                new ErroDatas();
+
+            }else{
+                System.out.println(registrando.toString());
+
+            }
         }
 
     }

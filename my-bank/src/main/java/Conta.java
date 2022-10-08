@@ -1,8 +1,11 @@
 import validacoes.ContaInexistente;
+import validacoes.ErroDatas;
 import validacoes.InsercaoNegativa;
 import validacoes.InsuficienciaSaldo;
 
+import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Conta {
 
@@ -13,6 +16,7 @@ public class Conta {
     private Double saldo=0.0;
 
     private Extrato mostrar;
+    private Date data;
 
     public Conta(String conta, String agencia){
         this.conta = conta;
@@ -87,6 +91,9 @@ public class Conta {
     }
     public  void imprimir(){
         System.out.println(mostrar.historico());
+    }
+    public void consultarExtrato(String dataInicial, String dataFinal) throws ErroDatas, ParseException {
+       mostrar.consultarExtratoPeriodo(dataInicial,dataFinal);
     }
 
 }

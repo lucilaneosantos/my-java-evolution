@@ -67,4 +67,16 @@ public class Conta {
         this.sacar(valor);
         conta.depositar(valor);
     }
+    public static boolean cancelarConta(String justificativa,Conta cancelarConta) throws ContaInexistente{
+        boolean cancelada;
+
+        if( justificativa!="" ){
+            cancelarConta=null;
+            cancelada=true;
+        }else{
+            cancelada =false;
+        }
+        return cancelada;
+
+    }
 }

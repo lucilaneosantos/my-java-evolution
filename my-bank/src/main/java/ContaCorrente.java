@@ -5,7 +5,9 @@ import validacoes.InsuficienciaSaldo;
 public class ContaCorrente extends Conta {
 
     public ContaCorrente(String conta, String agencia) {
+
         super(conta, agencia);
+        this.getSaldo();
     }
 @Override
     public void depositar(double valor) throws InsercaoNegativa {
@@ -34,10 +36,6 @@ public class ContaCorrente extends Conta {
         }
 
     }
-    @Override
-    public StringBuilder imprimir(){
 
-        return super();
-    }
 
 }

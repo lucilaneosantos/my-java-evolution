@@ -12,9 +12,12 @@ public class Conta {
     private LocalDate dataDeNascimento;
     private Double saldo=0.0;
 
+    private Extrato mostrar;
+
     public Conta(String conta, String agencia){
         this.conta = conta;
         this.agencia = agencia;
+        this.mostrar = new Extrato(this.getConta(),getAgencia());
     }
 
     public String getConta() {
@@ -79,8 +82,9 @@ public class Conta {
         return cancelada;
 
     }
-    public StringBuilder imprimir(){
-        Extrato tela = new Extrato(this.nomeCliente,this.agencia);
-       return tela.dadosCliente();
+    public  void imprimir(){
+        System.out.println(mostrar.dadosConta());
+        System.out.println(mostrar.meuSaldo(this.saldo));
     }
+
 }

@@ -4,14 +4,12 @@ import validacoes.InsuficienciaSaldo;
 public class App {
 
     public static void main(String[] args) throws InsercaoNegativa, InsuficienciaSaldo {
-    ContaCorrente cc = new ContaCorrente("1111","2222");
-    ContaCorrente c1 = new ContaCorrente("1111","222222");
-        cc.depositar(100);
-        System.out.println(cc.getSaldo());
+    ContaCorrente cc = new ContaCorrente("1212","2010");
+    ContaCorrente c1 = new ContaCorrente("1111","2022");
+        cc.depositar(50);
+        cc.imprimir();
         cc.transferir(45,c1);
-        System.out.println(cc.getSaldo());
-        System.out.println(c1.getSaldo());
-
-        System.out.println(c1.imprimir());
+        c1.imprimir();
+        cc.imprimir();
     }
 }
